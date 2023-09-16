@@ -24,7 +24,7 @@ public:
 
 private:
     // static member function: createLogString called before member variable initialized
-    // through using static, compiler will complain if createLogString use member variable
+    // through using static, compiler will complain if createLogString use member variable accidentally
     // if not static, when createLogString use member variable, it will cause undefined behaviour
     static std::string createLogString(const std::string& param){
         return param;
