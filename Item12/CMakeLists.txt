@@ -1,7 +1,16 @@
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.10)
 project(effective_cpp_3rd)
 
+# specify the C++ standard
 set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-#add_executable(show_case show_case.cpp)
-add_executable(main priority_customer.cpp)
+add_subdirectory(Customer)
+
+add_executable(main main.cpp)
+
+target_link_libraries(main PUBLIC Customer)
+
+target_include_directories(main PUBLIC
+                           "${PROJECT_SOURCE_DIR}/Customer"
+                          )

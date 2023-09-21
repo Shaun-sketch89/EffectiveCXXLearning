@@ -1,5 +1,9 @@
 #include "customer.h"
 
+void logCall(const std::string& funcName){
+    std::cout << funcName << std::endl;
+};
+
 Date::Date(std::string date)
 :date(date)
 {}
