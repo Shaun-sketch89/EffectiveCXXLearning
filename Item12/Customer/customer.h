@@ -1,8 +1,6 @@
 #include <iostream>
 
-void logCall(const std::string& funcName){
-    std::cout << funcName << std::endl;
-};
+void logCall(const std::string& funcName);
 
 class Date{
 public:
