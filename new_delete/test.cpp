@@ -18,7 +18,13 @@
  int *pia = new int[10]()
 
 new除了可以动态创建数组，也可用于创建单个对象（object）（只需指定类型，不需要命名，返回指向对象的指针）
+
+执行语句
+ delete p;
+p所指向的对象已经释放，但是在很多机器上，p仍然存放了它之前所指向对象的地址，
+重设指针的值，即p = 0，表明该指针不指向任何对象
 */
+#include <string>
 
 int get_size(){
     return 5;
@@ -36,6 +42,23 @@ int main(){
 
     // if we forget [], compiler won't discover this problem so that it will cause memory leak
     delete [] pci_ok;
+
+    //compiler knows this is wrong
+    //string str = "dwarves";
+    //delete str;
+
+    //compiler doesn't know this is wrong
+    //int i;
+    //int *pi = &i;
+    //delete pi;
+
+    // const object dynamically allocation
+    // built-in type, 必须初始化
+    const int *pci = new const int(1024);
+    // 类类型，调用默认构造函数
+    const std::string *pcs = new const std::string;
+    delete pci;
+    delete pcs;
 
     return 0;
 }
