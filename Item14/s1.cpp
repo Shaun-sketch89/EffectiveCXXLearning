@@ -4,6 +4,7 @@
 #include <iostream>
 
 // a toy Mutex class whose lock() and unlock() only print some infomation
+// one of resources need to be managed
 class Mutex{
 public:
     void lock(){
@@ -16,7 +17,7 @@ public:
 
 // core of this strategy
 // in this scnerio, we do not allow copy of Lock, we define copy constructor and copy assignment constructor private,
-// to prevent Lock to be copyed where the program won't compile
+// to prevent Lock to be copied
 class Uncopyable{
 public:
     Uncopyable(){};
