@@ -41,7 +41,7 @@ int main(){
     Mutex m;
     {
         Lock ml1(&m);
-        // where client do this, program won't compile
+        // when client do this, program won't compile
         Lock ml2(ml1);
     }
     std::cout << "out of block where Lock exists" << std::endl;
