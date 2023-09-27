@@ -67,8 +67,10 @@ int main(){
 
     // test resource being managed is a deep copy
     resourceManager1.setResourceID(2);
+    resourceManager3.setResourceID(6);
     std::cout << resourceManager1.getResourceID() << std::endl;
     std::cout << resourceManager2.getResourceID() << std::endl;
+    std::cout << resourceManager3.getResourceID() << std::endl;
 
     return 0;
 }
