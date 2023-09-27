@@ -62,8 +62,7 @@ int main(){
     ResourceManager resourceManager1(new SomeKindOfResource(1));
     // resource manager is copied
     ResourceManager resourceManager2(resourceManager1);
-    ResourceManager resourceManager3(new SomeKindOfResource(5));
-    resourceManager3 = resourceManager1;
+    ResourceManager resourceManager3 = resourceManager1;
 
     // test resource being managed is a deep copy
     resourceManager1.setResourceID(2);
