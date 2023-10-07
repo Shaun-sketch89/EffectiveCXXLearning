@@ -26,7 +26,9 @@ private:
     Uncopyable& operator=(const Uncopyable& rhs);
 };
 
-// Lock used to manage lock and unlock operation of Mutex
+// Lock is used to manage lock and unlock operation of Mutex
+// Lock is not used to manage the creation and destroy of Mutex
+// Lock is implemented like what raii class does
 class Lock: public Uncopyable{
 public:
     explicit Lock(Mutex *pm)
