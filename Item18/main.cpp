@@ -32,6 +32,12 @@ public:
         return *this;
     }
      */
+    //同时定义一个复合赋值操作符, 作为成员函数
+    //注意返回值类型 以及行参定义
+    const WrapperInt& operator*=(const WrapperInt& rhs){
+        val = this->val * rhs.val;
+        return *this;
+    }
 
     // note here we define member function const
     // otherwise member function cannot be called by const object
@@ -65,7 +71,10 @@ int main(){
     WrapperInt c;
     // if *operator member function return const type, following won't compile
     //a * b = c;
-    std::cout << c.getVal() << std::endl;
+
     c = a * b;
     std::cout << c.getVal() << std::endl;
+
+    a *= b;
+    std::cout << a.getVal() << std::endl;
 }
