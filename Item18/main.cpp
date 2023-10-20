@@ -84,8 +84,17 @@ std::ostream& operator<<(std::ostream& out, const WrapperInt& wi){
 std::istream& operator>>(std::istream& in, WrapperInt& wi){
     in >> wi.val;
     if(!in){
+        /*
         WrapperInt default_wi;
         wi = default_wi;
+         */
+        // 或者如下写
+        wi = WrapperInt();
+        // 但是不能这样写！如下实际是声明了一个函数
+        /*
+        WrapperInt default_wi();
+        wi = default_wi;
+         */
     }
     return in;
 }
