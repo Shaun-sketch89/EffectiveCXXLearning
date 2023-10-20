@@ -55,9 +55,18 @@ private:
 };
 
 //operator * normally defined as non-member function
+/*
 const WrapperInt operator*(const WrapperInt& lhs, const WrapperInt& rhs){
     WrapperInt res(lhs);
     res.setVal(lhs.getVal() * rhs.getVal());
+    return res;
+}
+*/
+
+// *operator重载函数的另一种实现：通过*= 来实现 *
+const WrapperInt operator*(const WrapperInt& lhs, const WrapperInt& rhs){
+    WrapperInt res(lhs);
+    res *= rhs;
     return res;
 }
 
