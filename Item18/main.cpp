@@ -20,6 +20,7 @@ private:
 
 class WrapperInt{
     friend std::ostream& operator<<(std::ostream&, const WrapperInt&);
+    friend std::istream& operator>>(std::istream&, WrapperInt&);
 public:
     explicit WrapperInt(int i=0)
             : val(i) {}
@@ -71,6 +72,15 @@ std::ostream& operator<<(std::ostream& out, const WrapperInt& wi){
     return out;
 }
 
+std::istream& operator>>(std::istream& in, WrapperInt& wi){
+    in >> wi.val;
+    if(!in){
+        WrapperInt default_wi;
+        wi = default_wi;
+    }
+    return in;
+}
+
 int main(){
     Week today;
     today = Tuesday;
@@ -95,4 +105,8 @@ int main(){
 
     // 我们对于WrapperInt类型重载了输出操作符，因此可以如下直接输出
     std::cout << a << std::endl;
+
+    WrapperInt k;
+    std::cin >> k;
+    std::cout << k << std::endl;
 }
