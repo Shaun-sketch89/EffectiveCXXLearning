@@ -36,6 +36,7 @@ public:
         return *this;
     }
     ~ScreenPtr() { if(--ptr->use == 0) delete ptr;}
+    // 成员访问操作符实现const与非const两个版本
     Screen& operator*() {return *ptr->sp;}
     Screen* operator->() {return ptr->sp;}
     const Screen& operator*() const {return *ptr->sp;}
