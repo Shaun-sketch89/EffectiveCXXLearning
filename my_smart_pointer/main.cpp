@@ -53,11 +53,13 @@ int main(){
     // 使用ScreenPtr重载的解引用操作符和箭头操作符，通过资源管理类来访问被管理类的成员
     std::cout << (*ps).getResolution() << std::endl;
     std::cout << ps->getResolution() << std::endl;
-
-    // 注意当资源管理类本身发生拷贝时发生了什么
-    // 资源管理类的赋值拷贝
-    ScreenPtr ps2 = ps;
-    // 资源管理类的构造拷贝
-    ScreenPtr ps3(ps2);
-    std::cout << ps2.use_count() << std::endl;
+    {
+        // 注意当资源管理类本身发生拷贝时发生了什么
+        // 资源管理类的赋值拷贝
+        ScreenPtr ps2 = ps;
+        // 资源管理类的构造拷贝
+        ScreenPtr ps3(ps2);
+        std::cout << ps2.use_count() << std::endl;
+    }
+    std::cout << ps.use_count() << std::endl;
 }
