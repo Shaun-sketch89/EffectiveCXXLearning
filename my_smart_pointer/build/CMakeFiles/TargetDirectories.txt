@@ -1,3 +1,0 @@
-/Users/yaoxuan/Desktop/EffectiveCXXLearning/my_smart_pointer/build/CMakeFiles/main.dir
-/Users/yaoxuan/Desktop/EffectiveCXXLearning/my_smart_pointer/build/CMakeFiles/edit_cache.dir
-/Users/yaoxuan/Desktop/EffectiveCXXLearning/my_smart_pointer/build/CMakeFiles/rebuild_cache.dir
