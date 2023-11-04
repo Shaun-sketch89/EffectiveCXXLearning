@@ -66,8 +66,7 @@ int main(){
     w = x * y * z;
     */
 
-    Rational a(1,2), b(3,4);
-    Rational c(2,3), d(3,4);
+    Rational a(1,2), b(3,4), c(2,3), d(3,4);
     if((a*b)==(c*d)){
         std::cout << "do whatever’s appropriate when the products are equal;" << std::endl;
     }else{
