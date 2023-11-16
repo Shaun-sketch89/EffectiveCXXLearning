@@ -7,9 +7,26 @@
 
 // In general, we're not permitted to alter the contents of the std namespace, but we are allowed to totally specialize standart templates
 namespace std{
+    //1. implementation when Widget is not a template
+    /*
     template<>
     void swap<Widget>(Widget& a, Widget& b){
         std::cout << "specialized swap call" << std::endl;
+        a.swap(b);
+    }
+     */
+    //2. partial specialization that legal for class templates, but not for function templates
+    // error! function template partial specialization is not allowed (~~~~ swap<Widget<T>> ~~~~)
+    /*
+    template<typename T>
+    void swap<Widget<T>>(Widget<T>& a, Widget<T>& b){
+        a.swap(b);
+    }
+     */
+    //3. we can overload
+    // but in std namespace, it's not okay to add new templates
+    template<typename T>
+    void swap(Widget<T>& a, Widget<T>& b){
         a.swap(b);
     }
 }
@@ -17,10 +34,10 @@ namespace std{
 int main(){
     std::vector<double> a(100, 1);
     std::vector<double> b(100, 3);
-    WidgetImpl *widget_impl_a = new WidgetImpl(a);
-    WidgetImpl *widget_impl_b = new WidgetImpl(b);
-    Widget widget_a(widget_impl_a);
-    Widget widget_b(widget_impl_b);
+    WidgetImpl<double> *widget_impl_a = new WidgetImpl<double>(a);
+    WidgetImpl<double> *widget_impl_b = new WidgetImpl<double>(b);
+    Widget<double> widget_a(widget_impl_a);
+    Widget<double> widget_b(widget_impl_b);
 
     std::swap(widget_a, widget_b);
     widget_a.showInfo();
