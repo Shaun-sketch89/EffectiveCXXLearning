@@ -5,6 +5,8 @@
 #include <vector>
 #include "widget.h"
 
+using namespace WidgetStuff;
+
 namespace std{
     //1. implementation when Widget is not a template
     //In general, we're not permitted to alter the contents of the std namespace, but we are allowed to totally specialize standart templates
@@ -25,10 +27,14 @@ namespace std{
      */
     //3. we can overload
     // but in std namespace, it's not okay to add new templates
+    // this will compile and run, but maybe result in undefined behaviour?
+    /*
     template<typename T>
     void swap(Widget<T>& a, Widget<T>& b){
+        std::cout << "specialized swap call" << std::endl;
         a.swap(b);
     }
+     */
 }
 
 int main(){
@@ -39,7 +45,7 @@ int main(){
     Widget<double> widget_a(widget_impl_a);
     Widget<double> widget_b(widget_impl_b);
 
-    std::swap(widget_a, widget_b);
+    swap(widget_a, widget_b);
     widget_a.showInfo();
     widget_b.showInfo();
 
