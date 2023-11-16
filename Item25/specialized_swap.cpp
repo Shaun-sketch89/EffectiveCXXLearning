@@ -5,9 +5,9 @@
 #include <vector>
 #include "widget.h"
 
-// In general, we're not permitted to alter the contents of the std namespace, but we are allowed to totally specialize standart templates
 namespace std{
     //1. implementation when Widget is not a template
+    //In general, we're not permitted to alter the contents of the std namespace, but we are allowed to totally specialize standart templates
     /*
     template<>
     void swap<Widget>(Widget& a, Widget& b){
