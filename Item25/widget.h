@@ -34,6 +34,8 @@ namespace WidgetStuff {
         }
 
         void swap(Widget<T> &other) {
+            // if we don't use "using std::swap", it will call member function itself!
+            // or we can directly use std::swap
             using std::swap;
             swap(pImpl, other.pImpl);
         }

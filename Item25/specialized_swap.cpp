@@ -5,8 +5,6 @@
 #include <vector>
 #include "widget.h"
 
-using namespace WidgetStuff;
-
 namespace std{
     //1. implementation when Widget is not a template
     //In general, we're not permitted to alter the contents of the std namespace, but we are allowed to totally specialize standart templates
@@ -40,11 +38,13 @@ namespace std{
 int main(){
     std::vector<double> a(100, 1);
     std::vector<double> b(100, 3);
-    WidgetImpl<double> *widget_impl_a = new WidgetImpl<double>(a);
-    WidgetImpl<double> *widget_impl_b = new WidgetImpl<double>(b);
-    Widget<double> widget_a(widget_impl_a);
-    Widget<double> widget_b(widget_impl_b);
+    WidgetStuff::WidgetImpl<double> *widget_impl_a = new WidgetStuff::WidgetImpl<double>(a);
+    WidgetStuff::WidgetImpl<double> *widget_impl_b = new WidgetStuff::WidgetImpl<double>(b);
+    WidgetStuff::Widget<double> widget_a(widget_impl_a);
+    WidgetStuff::Widget<double> widget_b(widget_impl_b);
 
+    // from a client's view, we call swap
+    // there may exist 3 swap: 1. std default swap 2. std specialized swap 3. T-specific swap in or not in a namespace(definitely not in std)
     swap(widget_a, widget_b);
     widget_a.showInfo();
     widget_b.showInfo();
