@@ -5,7 +5,7 @@
 #include <vector>
 #include "widget.h"
 
-// specialize swap in namespace std
+// In general, we're not permitted to alter the contents of the std namespace, but we are allowed to totally specialize standart templates
 namespace std{
     template<>
     void swap<Widget>(Widget& a, Widget& b){
@@ -23,6 +23,8 @@ int main(){
     Widget widget_b(widget_impl_b);
 
     std::swap(widget_a, widget_b);
+    widget_a.showInfo();
+    widget_b.showInfo();
 
     int aa = 1;
     int bb = 3;
