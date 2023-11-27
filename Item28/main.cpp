@@ -25,6 +25,7 @@ std::ostream& operator<<(std::ostream& out, const Point& point){
     return out;
 }
 
+// Store point data for Rectangle class
 struct RectData{
     RectData(const Point &ul, const Point &lr): ulhc(ul), lrhc(lr) {}
     Point ulhc;
