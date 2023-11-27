@@ -1,3 +1,0 @@
-/Users/yaoxuan/Desktop/EffectiveCXXLearning/Item28/build_Item28/CMakeFiles/main.dir
-/Users/yaoxuan/Desktop/EffectiveCXXLearning/Item28/build_Item28/CMakeFiles/edit_cache.dir
-/Users/yaoxuan/Desktop/EffectiveCXXLearning/Item28/build_Item28/CMakeFiles/rebuild_cache.dir

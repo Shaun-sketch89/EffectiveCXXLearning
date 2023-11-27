@@ -6,3 +6,4 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_executable(main main.cpp)
+add_executable(diff_with_main diff_with_main.cpp)

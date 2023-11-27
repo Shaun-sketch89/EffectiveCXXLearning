@@ -25,27 +25,22 @@ std::ostream& operator<<(std::ostream& out, const Point& point){
     return out;
 }
 
-// Store point data for Rectangle class
-struct RectData{
-    RectData(const Point &ul, const Point &lr): ulhc(ul), lrhc(lr) {}
-    Point ulhc;
-    Point lrhc;
-};
-
 class Rectangle{
 public:
-    Rectangle(const Point& ulhc, const Point& lrhc): pData(new RectData(ulhc, lrhc)){}
-    Point& upperLeft() const {return pData->ulhc;}
-    Point& lowerRight() const {return pData->lrhc;}
+    Rectangle(const Point& ul, const Point& lr): ulhc(ul), lrhc(lr){}
+    // return values must be declared const reference
+    const Point& upperLeft() const {return ulhc;}
+    const Point& lowerRight() const {return lrhc;}
 private:
-    std::shared_ptr<RectData> pData;
+    Point ulhc;
+    Point lrhc;
 };
 
 int main(){
     Point coord1(0,0);
     Point coord2(100,100);
-    // We declare rec to be const (we don't want rec to be changed anyway), but rec.upperLeft().setX(50) changed it!!
     const Rectangle rec(coord1, coord2);
+    // this won't compile, because rec.upperLeft() returns a const and setX() is non-const method
     rec.upperLeft().setX(50);
     std::cout << rec.upperLeft() << std::endl;
 }
