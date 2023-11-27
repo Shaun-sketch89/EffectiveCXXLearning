@@ -34,7 +34,7 @@ struct RectData{
 
 class Rectangle{
 public:
-    Rectangle(Point ulhc, Point lrhc): pData(new RectData(ulhc, lrhc)){}
+    Rectangle(const Point& ulhc, const Point& lrhc): pData(new RectData(ulhc, lrhc)){}
     Point& upperLeft() const {return pData->ulhc;}
     Point& lowerRight() const {return pData->lrhc;}
 private:
