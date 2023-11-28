@@ -28,7 +28,8 @@ std::ostream& operator<<(std::ostream& out, const Point& point){
 class Rectangle{
 public:
     Rectangle(const Point& ul, const Point& lr): ulhc(ul), lrhc(lr){}
-    // return values must be declared const reference
+    // if return value is not const, cause following error
+    // error: binding reference of type 'Point' to value of type 'const Point' drops 'const' qualifier
     const Point& upperLeft() const {return ulhc;}
     const Point& lowerRight() const {return lrhc;}
 private:
