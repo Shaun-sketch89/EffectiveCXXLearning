@@ -37,6 +37,7 @@ public:
     Rectangle(const Point& ulhc, const Point& lrhc): pData(new RectData(ulhc, lrhc)){}
     // notice return value is not const, because ulhc and lrhc lie outside of Rectangle object!!!
     // pData is const, but data pointed by pData is not const!!!
+    // solution is simple! add const to return value
     Point& upperLeft() const {return pData->ulhc;}
     Point& lowerRight() const {return pData->lrhc;}
 private:
