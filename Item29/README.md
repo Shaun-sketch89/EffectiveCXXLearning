@@ -33,6 +33,7 @@ non-throwing swap又是如何保证不抛出异常的呢？这基于一种实现
 * 指针是built-in type，基于built-in type的操作永远不会抛出异常！！
 
 
+** 书中的优化代码 **
 ![优化的代码截图](images/code-snippet.png)
 
 ### Struct vs Class
