@@ -32,9 +32,8 @@ non-throwing swap又是如何保证不抛出异常的呢？这基于一种实现
 * 高效
 * 指针是built-in type，基于built-in type的操作永远不会抛出异常！！
 
-以下为书中的优化的代码截图
 
-![](../../../../../var/folders/pw/h7cq6ggx6mg6kfvg_d6v1kk0vk0xkw/T/TemporaryItems/NSIRD_screencaptureui_eM56fa/截屏2023-12-07 下午3.53.08.png)
+![优化的代码截图](images/code-snippet.png)
 
 ### Struct vs Class
 书中选用的数据部分的单独实现PMImpl是一个struct，因为在PrettyMenu中以将指针声明为private保证了封装的特性。使用class也是可以的，比如在Item25中。选用struct的原因可能是更方便？
