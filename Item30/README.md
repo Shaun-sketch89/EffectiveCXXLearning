@@ -23,6 +23,8 @@ Circumstances that compiler will ignore the request
 * Too complicated, e.g., those that contain loops or are recursive (Most compilers)
 * Calls to virtual functions (All compilers? You can think about why)
 
+_Most compilers have a diagnostic level that will result in a warning if they fail to inline a function you've asked for._
+
 ## Pros and Cons
 ### pros.
 * Better than macros(Item2 explains in detail)
@@ -31,3 +33,12 @@ Circumstances that compiler will ignore the request
 ### cons.
 * Increase the size of object code
 * A reduced instruction cache hit rate
+
+## A decision whether declares inline or not 
+* If an inline function body is very short, then it is good candidates for inline
+* Constructors and destructors are worse candidates for inlining
+* For library designers, if f is an inline function and a library implementer later decides to change f, all clients who've used f must recompile
+* Most debuggers have trouble with inline functions
+
+As a general rule, initially don't inline anything, or at least limit your inlining to those that must be inline or are truly trivial;
+Focus on the _right_ functions that really matter for performance improvement(80-20 rule).  
