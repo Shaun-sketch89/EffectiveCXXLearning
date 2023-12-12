@@ -3,7 +3,7 @@
 //
 #include <iostream>
 #include <vector>
-#include "widget.h"
+#include "widget_wo_inline.h"
 
 namespace std{
     //1. implementation when Widget is not a template
