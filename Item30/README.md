@@ -1,4 +1,4 @@
-# Item29: Understanding the ins and outs of inlining
+# Item30: Understanding the ins and outs of inlining
 
 ## Inline idea
 Replace each call of function with its code body
