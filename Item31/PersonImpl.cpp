@@ -12,9 +12,9 @@ std::string PersonImpl::name() const {
 }
 
 std::string PersonImpl::birthdate() const {
-    return theBirthDay;
+    return theBirthDay.date();
 }
 
 std::string PersonImpl::address() const {
-    return theAddress;
+    return theAddress.address();
 }
