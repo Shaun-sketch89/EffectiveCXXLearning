@@ -11,5 +11,8 @@ public:
     std::string birthdate() const;
     std::string address() const;
 private:
+    // note Person is a handle class("pimpl pointer": include a pointer to real implementation)
+    // if we use pimpl, we can forward declare some user-defined types
+    // this will truly separate definition from implementation
     std::shared_ptr<PersonImpl> pImpl;
 };
