@@ -1,8 +1,14 @@
 #include <string>
 
+/*
 class PersonImpl;
 class Date;
 class Address;
+*/
+// provide two separate file including a declaration and a definition
+#include "datefwd.h"
+#include "addressfwd.h"
+#include "PersonImplFwd.h"
 
 class Person{
 public:
