@@ -32,6 +32,8 @@ non-throwing swap又是如何保证不抛出异常的呢？这基于一种实现
 * 高效
 * 指针是built-in type，基于built-in type的操作永远不会抛出异常！！
 
+"pimpl idiom"另外一个更重要的意义在于可以帮助实现handle class，一种将实现与接口分离的实现方法，即除非接口有变化，否则客户代码不需要重新编译。这个在Item31中详述。
+
 
 **书中的优化代码**
 
