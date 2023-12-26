@@ -13,6 +13,6 @@ public:
 private:
     // note Person is a handle class("pimpl pointer": include a pointer to real implementation)
     // if we use pimpl, we can forward declare some user-defined types
-    // this will truly separate definition from implementation
+    // this will truly separate interface from implementation which means clients of Person will recompile only if interface of Person has changed.
     std::shared_ptr<PersonImpl> pImpl;
 };
