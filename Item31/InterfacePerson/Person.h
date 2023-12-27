@@ -11,6 +11,7 @@ enum PersonType {
 
 // interface class - specify an interface for derived class
 // C++ allow data members and function implementation unlike JAVA
+// Like clients of Handle classes, clients of Interface classes need not recompile unless the Interface class’s interface is modified.
 class Person{
 public:
     // this function is called factory function or virtual constructor
