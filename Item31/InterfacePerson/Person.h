@@ -9,7 +9,8 @@ enum PersonType {
     whiteSkin = 2
 };
 
-// interface class
+// interface class - specify an interface for derived class
+// C++ allow data members and function implementation unlike JAVA
 class Person{
 public:
     static std::shared_ptr<Person> create(PersonType type, const std::string& name, const Date& birthday, const Address& addr);
