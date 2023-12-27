@@ -13,6 +13,7 @@ enum PersonType {
 // C++ allow data members and function implementation unlike JAVA
 class Person{
 public:
+    // this function is called factory function or virtual constructor
     static std::shared_ptr<Person> create(PersonType type, const std::string& name, const Date& birthday, const Address& addr);
     virtual ~Person();
 
