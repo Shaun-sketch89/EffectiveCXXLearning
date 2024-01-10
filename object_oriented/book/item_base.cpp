@@ -5,8 +5,8 @@
 
 Item_base::Item_base(const std::string &book, double sales_price): isbn(book), price(sales_price) {}
 
-std::string book() const {return isbn;}
+std::string Item_base::book() const {return isbn;}
 
-double net_price(std::size_t n) const { return n * price; }
+double Item_base::net_price(std::size_t n) const { return n * price; }
 
-~Item_base(){}
+Item_base::~Item_base(){}

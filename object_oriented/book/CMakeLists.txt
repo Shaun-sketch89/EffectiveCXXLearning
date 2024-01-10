@@ -1,0 +1,1 @@
+add_library(book bulk_item.cpp item_base.cpp)
