@@ -13,4 +13,5 @@ void print_total(const Item_base& item, std::size_t n){
 int main() {
     Bulk_item bulkItem("0-201-54848-8", 32, 5, 0.9);
     print_total(bulkItem, 10);
+    print_total(bulkItem, 3);
 }
