@@ -14,4 +14,13 @@ double Bulk_item::net_price(std::size_t n) const {
     }
 }
 
+void Bulk_item::memfcn(const Bulk_item &d, const Item_base &b) {
+    // ok: uses this->price
+    double ret = price;
+    // ok
+    ret = d.price;
+    // not ok
+    //ret = b.price;
+}
+
 Bulk_item::~Bulk_item(){}
