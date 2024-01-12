@@ -17,9 +17,9 @@ double Bulk_item::net_price(std::size_t n) const {
 void Bulk_item::memfcn(const Bulk_item &d, const Item_base &b) {
     // ok: uses this->price
     double ret = price;
-    // ok
+    // ok: Bulk_item can visit protected member of Bulk_item's object
     ret = d.price;
-    // not ok
+    // not ok: Bulk_item can not visit protected member of Item_base's object
     //ret = b.price;
 }
 
