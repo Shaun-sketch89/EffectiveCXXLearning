@@ -5,8 +5,11 @@
 #include "bulk_item.h"
 
 // pass by value will cause slice problem, result of main function will only call Item_base::net_price()
-void print_total(const Item_base item, std::size_t n){
-//void print_total(const Item_base& item, std::size_t n){
+// base class copy constructor will be called
+//void print_total(const Item_base item, std::size_t n){
+
+// dynamic binding
+void print_total(const Item_base& item, std::size_t n){
     std::cout << "ISBN: " << item.book()
               << "\tnumber sold: " << n << "\ttotal_price: "
               << item.net_price(n) << std::endl;

@@ -8,11 +8,11 @@ class Bulk_item;
 class Item_base{
 public:
     Item_base(const std::string& book = "", double sales_price = 0);
-    // In real scenes, we generally have params as "const Item_base&".
-    // default function will be: Item_base& operator=(const Item_base&);
+    // In real scenes, we don't need to have param "const Bulk_item&".
+    // Instead, default function will be: Item_base& operator=(const Item_base&);
     Item_base& operator=(const Bulk_item&);
-    // In real scenes, we generally have params as "const Item_base&". this function is useless
-    // default function will be: Item_base(const Item_base&);
+    // In real scenes, we don't need to have param "const Bulk_item&".
+    // Instead, default function will be: Item_base(const Item_base&);
     Item_base(const Bulk_item&);
 
     std::string book() const;
