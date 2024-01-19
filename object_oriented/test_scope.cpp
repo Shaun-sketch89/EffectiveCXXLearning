@@ -3,6 +3,7 @@
 //
 struct Base{
     int memfcn();
+    virtual int fcn();
 };
 
 int Base::memfcn() {
@@ -14,9 +15,15 @@ struct Derived : Base{
     // 使用using声明，可以在不重新定义基类函数的情况下，实现重载
     using Base::memfcn;
     int memfcn(int);
+
+    int fcn(int);
 };
 
 int Derived::memfcn(int) {
+    return 0;
+}
+
+int Derived::fcn(int) {
     return 0;
 }
 
@@ -31,4 +38,12 @@ int main(){
     d.memfcn();
     // 4.
     d.Base::memfcn();
+
+    Base *bptr = &d;
+
+    // OK: call Base::fcn()
+    bptr -> fcn();
+    // error
+    bptr -> fcn(5);
+
 }
