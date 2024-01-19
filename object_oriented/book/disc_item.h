@@ -11,6 +11,8 @@ public:
               std::size_t qty = 0,
               double disc_rate = 0.0);
 
+    std::pair<std::size_t, double> discount_policy() const;
+
 protected:
     std::size_t min_qty;
     double discount;

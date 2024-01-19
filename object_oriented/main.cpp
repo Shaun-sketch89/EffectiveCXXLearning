@@ -17,6 +17,7 @@ void print_total(const Item_base& item, std::size_t n){
 
 int main() {
     Bulk_item bulkItem("0-201-54848-8", 30, 5, 0.9);
+    bulkItem.discount_policy();
     print_total(bulkItem, 10);
     print_total(bulkItem, 3);
     //Item_base item = bulkItem; // compiler call copy constructor
