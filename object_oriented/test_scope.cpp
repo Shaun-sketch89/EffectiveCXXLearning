@@ -27,7 +27,7 @@ int main(){
     b.memfcn();
     // 2. calls Derived::memfcn
     d.memfcn(10);
-    // 3. error
+    // 3. error(if no using declaration)
     d.memfcn();
     // 4.
     d.Base::memfcn();
