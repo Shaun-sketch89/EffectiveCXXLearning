@@ -3,21 +3,23 @@
 //
 //#include "item_base.h"
 #include <iostream>
-#include "bulk_item.h"
+#include "item_base.h"
 
 Item_base::Item_base(const std::string &book, double sales_price): isbn(book), price(sales_price) {}
 
-Item_base &Item_base::operator=(const Bulk_item& bulkItem) {
+//Item_base &Item_base::operator=(const Bulk_item& bulkItem) {
+Item_base &Item_base::operator=(const Item_base& itemBase) {
     std::cout << "use defined assignment operator called" << std::endl;
-    this -> isbn = bulkItem.isbn;
-    this -> price = bulkItem.price;
+    this -> isbn = itemBase.isbn;
+    this -> price = itemBase.price;
     return *this;
 }
 
-Item_base::Item_base(const Bulk_item& bulkItem) {
+//Item_base::Item_base(const Bulk_item& bulkItem) {
+Item_base::Item_base(const Item_base& itemBase) {
     std::cout << "use defined copy constructor called" << std::endl;
-    this -> isbn = bulkItem.isbn;
-    this -> price = bulkItem.price;
+    this -> isbn = itemBase.isbn;
+    this -> price = itemBase.price;
 }
 
 std::string Item_base::book() const {return isbn;}

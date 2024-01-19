@@ -3,8 +3,9 @@
 //
 #include "bulk_item.h"
 
+// refactor: initialize direct base class(Disc_item)
 Bulk_item::Bulk_item(const std::string &book, double sales_price, std::size_t min_qauntity, double discount_rate):
-Item_base(book, sales_price), min_qty(min_qauntity), discount(discount_rate) {}
+Disc_item(book, sales_price, min_qauntity, discount_rate) {}
 
 double Bulk_item::net_price(std::size_t n) const {
     if (n < min_qty) {
