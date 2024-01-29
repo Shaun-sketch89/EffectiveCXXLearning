@@ -38,8 +38,7 @@ const Item_base* Sales_item::operator->() const {
 }
 
 Sales_item::~Sales_item() {
-    count--;
-    if(count==0){
+    if(--count==0){
         delete p;
     }
 }
