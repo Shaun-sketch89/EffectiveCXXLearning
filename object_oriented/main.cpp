@@ -2,7 +2,9 @@
 // Created by 姚轩 on 2024/1/10.
 //
 #include <iostream>
-#include "bulk_item.h"
+
+// user only need to know Sales_item
+#include "sales_item.h"
 
 // pass by value will cause slice problem, result of main function will only call Item_base::net_price()
 // base class copy constructor will be called
@@ -24,4 +26,8 @@ int main() {
     Item_base item;
     item = bulkItem; // compiler call assignment operator
     print_total(item, 10);
+
+    Sales_item salesItem(bulkItem);
+    salesItem->net_price(10);
+    (*salesItem).net_price(10);
 }

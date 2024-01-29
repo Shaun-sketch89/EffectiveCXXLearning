@@ -1,1 +1,1 @@
-add_library(book bulk_item.cpp disc_item.cpp item_base.cpp)
+add_library(book item_base.cpp disc_item.cpp bulk_item.cpp sales_item.cpp)
