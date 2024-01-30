@@ -28,6 +28,6 @@ int main() {
     print_total(item, 10);
 
     Sales_item salesItem(bulkItem);
-    salesItem->net_price(10); // equals to salesItem.operator->()->net_price(10)
-    (*salesItem).net_price(10);
+    std::cout << salesItem->net_price(10) << std::endl; // equals to salesItem.operator->()->net_price(10)
+    std::cout << (*salesItem).net_price(10) <<std::endl;
 }
