@@ -18,6 +18,7 @@ Sales_item& Sales_item::operator=(const Sales_item &s) {
 }
 
 Item_base& Sales_item::operator*() {
+    // 首先检查p是否为空指针，因为用户的使用有可能使这里为空指针，这样的话编译无法检出这个问题，运行时会出错。相应地，主动检查该指针，在其为空时抛出异常
     if(p) return *p;
     else throw std::logic_error("unbound Sales_item object");
 }
