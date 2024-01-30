@@ -1,6 +1,0 @@
-/Users/yaoxuan/Desktop/EffectiveCXXLearning/object_oriented/cmake-build-debug/CMakeFiles/main.dir
-/Users/yaoxuan/Desktop/EffectiveCXXLearning/object_oriented/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/yaoxuan/Desktop/EffectiveCXXLearning/object_oriented/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/yaoxuan/Desktop/EffectiveCXXLearning/object_oriented/cmake-build-debug/book/CMakeFiles/book.dir
-/Users/yaoxuan/Desktop/EffectiveCXXLearning/object_oriented/cmake-build-debug/book/CMakeFiles/edit_cache.dir
-/Users/yaoxuan/Desktop/EffectiveCXXLearning/object_oriented/cmake-build-debug/book/CMakeFiles/rebuild_cache.dir
