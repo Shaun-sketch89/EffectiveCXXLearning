@@ -11,6 +11,10 @@ Sales_item::Sales_item(Item_base *i): p(i), count(new std::size_t(1)) {}
 Sales_item::Sales_item(const Sales_item &s): p(s.p), count(s.count) { ++*count; }
 
 Sales_item& Sales_item::operator=(const Sales_item &s) {
+    // prevent self-assignment
+    if(this == &this){
+        return *this;
+    }
     p = s.p;
     count = s.count;
     ++*count;
