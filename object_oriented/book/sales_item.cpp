@@ -4,16 +4,16 @@
 #include "sales_item.h"
 
 // note here p is initialized 0. this is an implicit type conversion
-Sales_item::Sales_item(): p(0), count(0) {}
+Sales_item::Sales_item(): p(0), count(new std::size_t(0)) {}
 
-Sales_item::Sales_item(Item_base *i): p(i), count(1) {}
+Sales_item::Sales_item(Item_base *i): p(i), count(new std::size_t(1)) {}
 
-Sales_item::Sales_item(const Sales_item &s): p(s.p), count(s.count) { count++; }
+Sales_item::Sales_item(const Sales_item &s): p(s.p), count(s.count) { ++*count; }
 
 Sales_item& Sales_item::operator=(const Sales_item &s) {
     p = s.p;
     count = s.count;
-    count++;
+    ++*count;
     return *this;
 }
 
@@ -39,7 +39,8 @@ const Item_base* Sales_item::operator->() const {
 }
 
 Sales_item::~Sales_item() {
-    if(--count==0){
+    if(--*count == 0){
         delete p;
+        delete count;
     }
 }
