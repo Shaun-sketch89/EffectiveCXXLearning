@@ -1,0 +1,10 @@
+# ninja log v5
+1	341	1706582656151312255	book/CMakeFiles/book.dir/bulk_item.cpp.o	f94029908a9a5b3e
+1	343	1706582656151314506	book/CMakeFiles/book.dir/disc_item.cpp.o	56a0dfabb0efdc14
+2	344	1706582656152059165	book/CMakeFiles/book.dir/sales_item.cpp.o	165b478c8e144df9
+1	417	1706582656227753517	CMakeFiles/main.dir/main.cpp.o	717f0d00e3fafb8c
+1	418	1706582656227846485	book/CMakeFiles/book.dir/item_base.cpp.o	c39e1ba13f2f3f1e
+418	439	1706582656252992000	book/libbook.a	b02f777363f0ac3e
+439	472	1706582656285321217	main	cd83e3d11304ec8c
+2	362	1706584096484038746	CMakeFiles/main.dir/main.cpp.o	717f0d00e3fafb8c
+362	396	1706584096521469243	main	cd83e3d11304ec8c
