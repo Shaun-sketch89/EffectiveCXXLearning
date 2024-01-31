@@ -12,7 +12,7 @@ Sales_item::Sales_item(const Sales_item &s): p(s.p), count(s.count) { ++*count; 
 
 Sales_item& Sales_item::operator=(const Sales_item &s) {
     // prevent self-assignment
-    if(this == &this){
+    if(this == &s){
         return *this;
     }
     p = s.p;
