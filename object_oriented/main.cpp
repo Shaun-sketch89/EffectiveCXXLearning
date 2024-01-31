@@ -28,7 +28,10 @@ int main() {
     print_total(item, 10);
 
     // Sales_item manage dynamically allocated object
-    Sales_item salesItem(new Bulk_item("1-301-54848-9", 40, 5, 0.5));
+    //Sales_item salesItem(new Bulk_item("1-301-54848-9", 40, 5, 0.5));
+    // revised to following, using newly defined clone()
+    Sales_item salesItem(bulkItem);
+
     std::cout << salesItem->net_price(10) << std::endl; // equals to salesItem.operator->()->net_price(10)
     std::cout << (*salesItem).net_price(10) <<std::endl;
 }

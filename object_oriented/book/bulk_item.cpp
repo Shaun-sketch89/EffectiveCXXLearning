@@ -25,3 +25,5 @@ void Bulk_item::memfcn(const Bulk_item &d, const Item_base &b) {
 }
 
 Bulk_item::~Bulk_item(){}
+
+Bulk_item* Bulk_item::clone() const {return new Bulk_item(*this); }

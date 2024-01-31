@@ -6,7 +6,9 @@
 // note here p is initialized 0. this is an implicit type conversion
 Sales_item::Sales_item(): p(0), count(new std::size_t(0)) {}
 
-Sales_item::Sales_item(Item_base *i): p(i), count(new std::size_t(1)) {}
+//Sales_item::Sales_item(Item_base *i): p(i), count(new std::size_t(1)) {}
+//revised to following
+Sales_item::Sales_item(const Item_base& i): p(i.clone()), count(new std::size_t(1)) {}
 
 Sales_item::Sales_item(const Sales_item &s): p(s.p), count(s.count) { ++*count; }
 

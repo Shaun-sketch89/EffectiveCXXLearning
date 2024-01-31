@@ -19,6 +19,9 @@ public:
     std::string book() const;
     virtual double net_price(std::size_t) const;
     virtual ~Item_base();
+
+    // see what clone() does; note const here
+    virtual Item_base* clone() const;
 private:
     std::string isbn;
 protected:

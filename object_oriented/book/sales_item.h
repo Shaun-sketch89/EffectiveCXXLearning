@@ -9,7 +9,9 @@
 class Sales_item{
 public:
     Sales_item();
-    Sales_item(Item_base*);
+    //Sales_item(Item_base*);
+    //revised to following
+    Sales_item(const Item_base&);
     Sales_item(const Sales_item&);
     Sales_item& operator=(const Sales_item&);
     Item_base& operator*();

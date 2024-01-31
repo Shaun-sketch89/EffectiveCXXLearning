@@ -12,6 +12,8 @@ public:
     virtual double net_price(std::size_t) const;
     virtual ~Bulk_item();
 
+    virtual Bulk_item* clone() const;
+
 // member refactor to Disc_item class
 //private:
 //    std::size_t min_qty;

@@ -16,6 +16,8 @@ public:
 
     std::pair<std::size_t, double> discount_policy() const;
 
+    virtual Disc_item* clone() const = 0;
+
 protected:
     std::size_t min_qty;
     double discount;

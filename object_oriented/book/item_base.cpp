@@ -27,3 +27,5 @@ std::string Item_base::book() const {return isbn;}
 double Item_base::net_price(std::size_t n) const { return n * price; }
 
 Item_base::~Item_base(){}
+
+Item_base* Item_base::clone() const { return new Item_base(*this);};
