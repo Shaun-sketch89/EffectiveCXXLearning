@@ -13,10 +13,7 @@ Sales_item::Sales_item(const Item_base& i): p(i.clone()), count(new std::size_t(
 Sales_item::Sales_item(const Sales_item &s): p(s.p), count(s.count) { ++*count; }
 
 Sales_item& Sales_item::operator=(const Sales_item &s) {
-    // prevent self-assignment
-    if(this == &s){
-        return *this;
-    }
+    // implementation different from the one in C++ Primer(4th edition. Page 750)
     p = s.p;
     count = s.count;
     ++*count;
@@ -42,6 +39,10 @@ Item_base* Sales_item::operator->() {
 const Item_base* Sales_item::operator->() const {
     if(p) return p;
     else throw std::logic_error("unbound Sales_item object");
+}
+
+int Sales_item::get_count() {
+    return *count;
 }
 
 Sales_item::~Sales_item() {

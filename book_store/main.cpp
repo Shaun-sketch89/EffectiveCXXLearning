@@ -34,4 +34,8 @@ int main() {
 
     std::cout << salesItem->net_price(10) << std::endl; // equals to salesItem.operator->()->net_price(10)
     std::cout << (*salesItem).net_price(10) <<std::endl;
+
+    std::cout << salesItem.get_count() << std::endl;
+    Sales_item salesItem2(salesItem);
+    std::cout << salesItem.get_count() << std::endl;
 }

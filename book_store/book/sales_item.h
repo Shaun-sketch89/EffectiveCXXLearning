@@ -18,6 +18,7 @@ public:
     const Item_base& operator*() const;
     Item_base* operator->();
     const Item_base* operator->() const;
+    int get_count();
     ~Sales_item();
 private:
     std::size_t* count;
