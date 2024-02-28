@@ -16,6 +16,14 @@ public:
         this->size = size;
     }
     ~AlignedArray() { free(ptr); }
+    AlignedArray& operator=(const AlignedArray& rhs){
+        scalar_t* pOrig = ptr;
+        int ret = posix_memalign((void**)&ptr, ALIGNMENT, rhs.size * ELEM_SIZE);
+        if (ret != 0) throw std::bad_alloc();
+        std::memcpy(ptr, rhs.ptr, rhs.size * ELEM_SIZE);
+        free(pOrig);
+        return *this;
+    }
     size_t ptr_as_int() {return (size_t)ptr; }
 private:
     scalar_t* ptr;
