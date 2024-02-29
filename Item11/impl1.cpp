@@ -18,7 +18,7 @@ public:
         this->size = size;
     }
     ~AlignedArray() { free(ptr); }
-    // alternative1
+    // one of implementation of assignment operator
     // a careful ordering of statements can yield exception-safe (and self-assignment-safe) code
     AlignedArray& operator=(const AlignedArray& rhs){
         // for debug
