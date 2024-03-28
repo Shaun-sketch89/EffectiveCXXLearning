@@ -5,6 +5,7 @@
 using std::cout;
 using std::endl;
 
+// forward declaration
 class GameCharacter;
 int defaultHealthCalc(const GameCharacter& gc){
     cout << "defualt health calc\n" << endl;
