@@ -7,7 +7,7 @@ using std::endl;
 
 class GameCharacter{
 public:
-    // non-virtual interface(NVI) which is a more general design pattern called Template Method
+    // non-virtual interface(NVI) which is a particular manifestation of the more general design pattern called Template Method
     int healthValue() const{
         cout << "do before stuff\n";
         int retVal = doHealthValue();
