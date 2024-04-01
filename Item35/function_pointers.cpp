@@ -23,10 +23,12 @@ int loseHealthSlowly(const GameCharacter& gc){
 class GameCharacter{
 public:
     typedef int (*HealthCalcFunc)(const GameCharacter&);
+    // explicit GameCharacter(HealthCalcFunc hcf = &defaultHealthCalc) is ok
     explicit GameCharacter(HealthCalcFunc hcf = defaultHealthCalc)
     :healthFunc(hcf)
     {}
     int healthValue() const{
+        // (*healthFunc)(*this) is ok
         return healthFunc(*this);
     }
 
