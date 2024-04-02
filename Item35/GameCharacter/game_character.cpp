@@ -3,6 +3,8 @@
 //
 #include "game_character.h"
 
+HealthCalcFunc defaultHealthCalc;
+
 GameCharacter::GameCharacter(HealthCalcFunc *phcf, std::string selfI)
         : pHealthCalc(phcf), selfIntro(selfI)
         {}

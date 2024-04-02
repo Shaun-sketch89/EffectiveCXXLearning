@@ -5,7 +5,13 @@
 #include <string>
 using std::string;
 
-HealthCalcFunc defaultHealthCalc;
+// note: Do not define variables in headers
+// that's equivalent to defining them in every source file that includes the header
+// and that's what's causing your linker error.
+//HealthCalcFunc defaultHealthCalc;
+// instead, using extern
+extern HealthCalcFunc defaultHealthCalc;
+
 // game character hierarchy
 class GameCharacter{
 public:
