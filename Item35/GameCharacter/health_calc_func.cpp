@@ -1,6 +1,7 @@
 //
 // Created by 姚轩 on 2024/4/2.
 //
+#include "health_calc_func.h"
 #include "game_character.h"
 
 int HealthCalcFunc::calc(const GameCharacter &gc) const {

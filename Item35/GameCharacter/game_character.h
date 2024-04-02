@@ -1,9 +1,11 @@
 //
 // Created by 姚轩 on 2024/4/2.
 //
-#include "health_calc_func.h"
+//#include "health_calc_func.h"
 #include <string>
 using std::string;
+
+class HealthCalcFunc;
 
 // note: Do not define variables in headers
 // that's equivalent to defining them in every source file that includes the header
