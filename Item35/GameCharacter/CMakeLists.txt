@@ -1,0 +1,1 @@
+add_library(GameCharacter game_character.cpp health_calc_func.cpp)
