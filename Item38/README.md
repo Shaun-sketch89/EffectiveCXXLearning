@@ -10,7 +10,7 @@
 
 ### In the application domain(real world objects modeling), composition means has-a. In the implementation domain(purely implementation artifects), it means is-implemented-in-terms-of.
 
-### reuse is a wonderful thing.
+### Reuse is a wonderful thing.
 
 ### Better be familiar with standard library and data structures
 
