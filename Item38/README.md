@@ -16,4 +16,4 @@
 
 ### std::list<T> represents collections of objects with duplicates. But std::set<T> without duplicates.
 
-### Set can be implemented in terms of list. Set is-not-a list!
+### Set can be implemented in terms of List. Set is-not-a List!
