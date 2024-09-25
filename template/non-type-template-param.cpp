@@ -9,6 +9,12 @@ template<typename T, std::size_t N> void array_init(T (&parm)[N]){
     }
 }
 
+template<typename T, std::size_t N> void array_display(const T* parm){
+    for(std::size_t i = 0; i != N; ++i){
+        std::cout << parm[i] << std::endl;
+    }
+}
+
 int main(){
     int a[10];
     double b[20];
@@ -16,9 +22,7 @@ int main(){
     array_init(a);
     array_init(b);
 
-    for (std::size_t i = 0; i < sizeof(a) / sizeof(a[0]); i++){
-        std::cout << a[i] << std::endl;
-    }
+    array_display<int, 10>(a);
 
     return 0;
 }
