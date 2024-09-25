@@ -3,7 +3,8 @@
 //
 #include <iostream>
 
-template<typename T, std::size_t N> void array_init(T (&parm)[N]){
+template<typename T, std::size_t N> 
+void array_init(T (&parm)[N]){
     for(std::size_t i = 0; i != N; ++i){
         parm[i] = i;
     }
@@ -17,7 +18,8 @@ template<typename T, std::size_t N> void array_init(T (&parm)[N]){
 函数形参说明:
 - T (&parm)[N]: 引用参数,引用一个类型为T、大小为N的数组
 */
-template<typename T, std::size_t N> void array_display(const T (&parm)[N]) {
+template<typename T, std::size_t N> 
+void array_display(const T (&parm)[N]) {
     for(std::size_t i = 0; i < N; ++i) {
         std::cout << parm[i] << ' ';
     }
