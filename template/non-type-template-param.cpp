@@ -5,7 +5,7 @@
 
 template<typename T, std::size_t N> 
 void array_init(T (&parm)[N]){
-    for(std::size_t i = 0; i != N; ++i){
+    for(std::size_t i = 0; i < N; ++i){
         parm[i] = i;
     }
 }
@@ -23,6 +23,7 @@ void array_display(const T (&parm)[N]) {
     for(std::size_t i = 0; i < N; ++i) {
         std::cout << parm[i] << ' ';
     }
+    std::cout << std::endl;
 }
 
 int main(){
