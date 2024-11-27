@@ -1,4 +1,3 @@
-#include <iostream>
 #include "queue.h"
 
 int main() {
@@ -7,8 +6,6 @@ int main() {
     int i = 42;
     qi.push(s);
     qi.push(i);
-    std::cout << qi.front() << std::endl;
-    qi.pop();
-    std::cout << qi.front() << std::endl;
+    std::cout << qi << std::endl;
     return 0;
 }

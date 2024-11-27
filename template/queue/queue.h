@@ -1,13 +1,24 @@
+#include <iostream>
+
+// 声明依赖性
+template <typename T>
+class Queue;
+
+template <typename T>
+std::ostream& operator<<(std::ostream&, const Queue<T>&);
+
 template <typename T>
 class QueueItem {
-    public:
-        QueueItem(const T& t): item(t), next(0) {}
-        T item;
-        QueueItem* next;
+    // Queue<T> 是 QueueItem<T> 的友元类
+    friend class Queue<T>;
+    QueueItem(const T& t): item(t), next(0) {}
+    T item;
+    QueueItem* next;
 };
 
 template <typename T>
 class Queue {
+    friend std::ostream& operator<< <T>(std::ostream&, const Queue&);
     public:
         Queue(): head(0), tail(0) {}
         Queue(const Queue& q): head(0), tail(0) {
@@ -67,4 +78,12 @@ void Queue<T>::pop() {
     QueueItem<T>* p = head;
     head = head->next;
     delete p;
+}
+
+template <typename T>
+std::ostream& operator<<(std::ostream& os, const Queue<T>& q) {
+    os << "<";
+    for (QueueItem<T>* p = q.head; p; p = p->next) os << p->item << " ";
+    os << ">";
+    return os;
 }
