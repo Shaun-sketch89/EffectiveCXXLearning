@@ -24,6 +24,10 @@ class Queue {
         Queue(const Queue& q): head(0), tail(0) {
             copy_elems(q);
         }
+        template <typename Iter>
+        Queue(Iter begin, Iter end): head(0), tail(0) {
+            copy_elems(begin, end);
+        }
         ~Queue() {
             destroy();
         }
@@ -37,11 +41,15 @@ class Queue {
         bool empty() const {
             return head == 0;
         }
+        template <typename Iter>
+        void assign(Iter, Iter);
     private:
         QueueItem<T>* head;
         QueueItem<T>* tail;
         void destroy();
         void copy_elems(const Queue&);
+        template <typename Iter>
+        void copy_elems(Iter, Iter);
 };
 
 template <typename T>
@@ -78,6 +86,19 @@ void Queue<T>::pop() {
     QueueItem<T>* p = head;
     head = head->next;
     delete p;
+}
+
+template <typename T>
+template <typename Iter>
+void Queue<T>::assign(Iter begin, Iter end) {
+    destroy();
+    copy_elems(begin, end);
+}
+
+template <typename T>
+template <typename Iter>
+void Queue<T>::copy_elems(Iter begin, Iter end) {
+    for (Iter i = begin; i != end; ++i) push(*i);
 }
 
 template <typename T>
