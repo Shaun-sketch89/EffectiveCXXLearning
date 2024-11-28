@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 
 // 声明依赖性
@@ -51,7 +53,7 @@ class Queue {
         template <typename Iter>
         void copy_elems(Iter, Iter);
 };
-
+/*
 template <typename T>
 void Queue<T>::destroy() {
     while (!empty()) pop();
@@ -108,3 +110,8 @@ std::ostream& operator<<(std::ostream& os, const Queue<T>& q) {
     os << ">";
     return os;
 }
+*/
+
+// 包含编译模型，将部分成员函数定义放在源文件中，这样可能更清楚？这样会有啥问题？
+// 也可以直接的都放在头文件中
+#include "queue.cc"
