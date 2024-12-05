@@ -9,7 +9,7 @@ Item_base::Item_base(const std::string &book, double sales_price): isbn(book), p
 
 //Item_base &Item_base::operator=(const Bulk_item& bulkItem) {
 Item_base &Item_base::operator=(const Item_base& itemBase) {
-    std::cout << "use defined assignment operator called" << std::endl;
+    //std::cout << "use defined assignment operator called" << std::endl;
     this -> isbn = itemBase.isbn;
     this -> price = itemBase.price;
     return *this;
@@ -17,7 +17,7 @@ Item_base &Item_base::operator=(const Item_base& itemBase) {
 
 //Item_base::Item_base(const Bulk_item& bulkItem) {
 Item_base::Item_base(const Item_base& itemBase) {
-    std::cout << "use defined copy constructor called" << std::endl;
+    //std::cout << "use defined copy constructor called" << std::endl;
     this -> isbn = itemBase.isbn;
     this -> price = itemBase.price;
 }
