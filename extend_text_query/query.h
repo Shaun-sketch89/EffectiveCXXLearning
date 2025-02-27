@@ -1,4 +1,7 @@
-#include "query_base.h"
+#ifndef QUERY_H
+#define QUERY_H
+
+#include "word_query.h"
 
 class Query{
     friend Query operator&(const Query&, const Query&);
@@ -18,3 +21,9 @@ private:
     std::size_t *use;
     void decr_use();
 };
+
+inline std::ostream& operator<<(std::ostream& os, const Query& q){
+    return q.display(os);
+}
+
+#endif

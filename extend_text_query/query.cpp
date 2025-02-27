@@ -1,5 +1,7 @@
 #include "query.h"
 
+Query::Query(const std::string& s): q(new WordQuery(s)), use(new std::size_t(1)){}
+
 Query::Query(const Query& c): q(c.q), use(c.use){
     ++*use;
 }
