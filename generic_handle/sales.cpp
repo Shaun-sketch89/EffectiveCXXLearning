@@ -11,6 +11,10 @@ int main(){
     for(std::size_t i = 0; i != 5; ++i){
         basket.add_item(bulk2);
     }
+    Item_base bulk3("10-501-82470-1", 100);
+    for (std::size_t i = 0; i != 10; ++i) {
+        basket.add_item(bulk3);
+    }
     std::cout << basket.total() << std::endl;
     return 0;
 }
