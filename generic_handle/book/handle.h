@@ -1,6 +1,8 @@
 // 句柄类作用：
 // 1. 提供管理使用计数和基础对象的操作。
 // 2. 句柄类的用户无需关心指针的管理（比如不再需要实现拷贝控制成员以及析构成员）。
+#include <stdexcept>
+
 template <typename T>
 class Handle {
 public:
